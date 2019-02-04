@@ -29,7 +29,7 @@ class App extends Component {
         setTimeout(() => this.setState({ 
           errorMessage: '',
           errorStatus: ''
-        }) , 1000);
+        }) , 1500);
       })
     })
   }

@@ -6,6 +6,7 @@ class Landing extends React.Component{
     return(
       <div className="landing">
         <p className="title">Handle Internet Connection</p>        
+        <p>Go offline to see it in action</p>
       </div>
     )
   }
