@@ -1,15 +1,15 @@
 import * as React from 'react';
+import Alert from '../Alert';
 
 class Landing extends React.Component{
   state = {
-    isOnline: window.navigator.onLine,
-    errorMessage: ''
+    errorMessage: '',
   }
 
   componentDidMount = () => {
     window.addEventListener('offline', () => {
       this.setState({
-        errorMessage: 'No Internet Connection'
+        errorMessage: 'No Internet Connection',
       })
     })
   }
@@ -17,7 +17,7 @@ class Landing extends React.Component{
   componentDidUpdate = () => {
     window.addEventListener('online', () => {
       this.setState({
-        errorMessage: ''
+        errorMessage: '',
       })
     })
   }
@@ -26,7 +26,7 @@ class Landing extends React.Component{
     return(
       <div className="landing">
         <p className="title">Handle Internet Connection</p>
-        <p>{this.state.errorMessage}</p>
+        { this.state.errorMessage && <Alert message={this.state.errorMessage} />}
       </div>
     )
   }
