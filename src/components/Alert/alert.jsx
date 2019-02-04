@@ -3,7 +3,7 @@ import './alert.css';
 
 const Alert = props => {
   return(
-    <div className="alert-box">
+    <div className={props.type === 'success' ? 'alert-box success' : 'alert-box error'}>
       <span>{props.message}</span>
     </div>
   )

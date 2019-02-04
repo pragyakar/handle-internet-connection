@@ -13,7 +13,7 @@ class App extends Component {
   componentDidMount = () => {
     window.addEventListener('offline', () => {
       this.setState({
-        errorMessage: 'No Internet Connection Detected... ',
+        errorMessage: 'No Internet Connection Detected...',
       })
     })
   }
@@ -32,7 +32,7 @@ class App extends Component {
         <Router>
           <Route exact path="/" component={Landing} />
         </Router>
-        { this.state.errorMessage && <Alert message={this.state.errorMessage} />}
+        { this.state.errorMessage && <Alert message={this.state.errorMessage} type={'success'} />}
       </div>
     );
   }

@@ -5,12 +5,18 @@
   bottom: 40px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px grey;
-  border-left: 10px solid rgb(255, 78, 78);
   padding: 30px 60px 30px 50px;
   min-height: 10px;
   animation: 0.5s fadeIn;
   animation-fill-mode: forwards;
   visibility: hidden;
+}
+
+.alert-box.error {
+  border-left: 10px solid rgb(255, 78, 78);
+}
+.alert-box.success {
+  border-left: 10px solid rgb(0, 223, 30);
 }
 
 .alert-box span {
