@@ -9,7 +9,7 @@ class Landing extends React.Component{
   componentDidMount = () => {
     window.addEventListener('offline', () => {
       this.setState({
-        errorMessage: 'No Internet Connection',
+        errorMessage: 'No Internet Connection Detected... ',
       })
     })
   }
