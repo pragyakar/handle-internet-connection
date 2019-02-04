@@ -8,12 +8,14 @@ import './App.css';
 class App extends Component {
   state = {
     errorMessage: '',
+    errorStatus: ''
   }
 
   componentDidMount = () => {
     window.addEventListener('offline', () => {
       this.setState({
         errorMessage: 'No Internet Connection Detected...',
+        errorStatus: 'error'
       })
     })
   }
@@ -21,7 +23,13 @@ class App extends Component {
   componentDidUpdate = () => {
     window.addEventListener('online', () => {
       this.setState({
-        errorMessage: '',
+        errorMessage: 'Internet is back online...',
+        errorStatus: 'success'
+      }, () => {
+        setTimeout(() => this.setState({ 
+          errorMessage: '',
+          errorStatus: ''
+        }) , 1000);
       })
     })
   }
@@ -32,7 +40,7 @@ class App extends Component {
         <Router>
           <Route exact path="/" component={Landing} />
         </Router>
-        { this.state.errorMessage && <Alert message={this.state.errorMessage} type={'success'} />}
+        { this.state.errorMessage && <Alert message={this.state.errorMessage} type={this.state.errorStatus} />}
       </div>
     );
   }
