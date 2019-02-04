@@ -1,17 +1,29 @@
 .alert-box {
   position: fixed;
   background: white;
-  right: 20px;
-  bottom: 20px;
+  right: 40px;
+  bottom: 40px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px grey;
   border-left: 10px solid rgb(255, 78, 78);
-  padding: 30px 50px;
+  padding: 30px 60px 30px 50px;
   min-height: 10px;
-  
+  animation: 0.5s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
 }
 
 .alert-box span {
   color: rgb(80, 80, 80);
   font-size: 17px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
