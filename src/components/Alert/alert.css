@@ -13,7 +13,7 @@
 }
 
 .alert-box.error {
-  border-left: 10px solid rgb(255, 78, 78);
+  border-left: 10px solid rgb(255, 129, 129);
 }
 .alert-box.success {
   border-left: 10px solid rgb(78, 255, 102);
